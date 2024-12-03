@@ -1,0 +1,9 @@
+node_modules/
+pool.js
+package-lock.json
+dist/
+.vscode/
+logs/
+*.log
+.env
+npm-debug.log*
