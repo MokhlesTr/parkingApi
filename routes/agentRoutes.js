@@ -98,7 +98,7 @@ const DeleteAgent = async (req, res) => {
 
 const UpdateAgent = async (req, res) => {
   try {
-    const { id_agent } = req.params; // Capture the parameter as id_agent
+    const { id_agent } = req.params;
     const updates = req.body;
     let UpdatedAgentKeys = Object.keys(updates);
     let UpdatedAgentValues = Object.values(updates);
@@ -111,7 +111,7 @@ const UpdateAgent = async (req, res) => {
       (key, index) => `${key} = $${index + 1}`
     ).join(", ");
 
-    const values = [...UpdatedAgentValues, id_agent]; // Use id_agent in the values
+    const values = [...UpdatedAgentValues, id_agent];
     const query = `UPDATE agent SET ${fields} WHERE id_agent = $${values.length}`;
 
     const result = await pool.query(query, values);
