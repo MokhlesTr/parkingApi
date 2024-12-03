@@ -128,18 +128,18 @@ const UpdateAgent = async (req, res) => {
 };
 
 //1st method
-router.get("/", GetAllAgents);
-router.post("/", AddAgent);
-router.get("/:id_agent", GetOneAgent);
-router.delete("/:id_agent", DeleteAgent);
-router.put("/:id_agent", UpdateAgent);
+// router.get("/", GetAllAgents);
+// router.post("/", AddAgent);
+// router.get("/:id_agent", GetOneAgent);
+// router.delete("/:id_agent", DeleteAgent);
+// router.put("/:id_agent", UpdateAgent);
 
 //2nd method
-// router.route("/").get(GetAllAgents).post(AddAgent);
-// router
-//   .route("/:id_agent")
-//   .get(GetOneAgent)
-//   .delete(DeleteAgent)
-//   .put(UpdateAgent);
+router.route("/").get(GetAllAgents).post(AddAgent);
+router
+  .route("/:id_agent")
+  .get(GetOneAgent)
+  .delete(DeleteAgent)
+  .put(UpdateAgent);
 
 module.exports = router;
